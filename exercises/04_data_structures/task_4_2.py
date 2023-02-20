@@ -15,3 +15,6 @@
 """
 
 mac = "AAAA:BBBB:CCCC"
+macs_list = mac.split(':')
+mac = '.'.join(macs_list)
+print(mac)
