@@ -26,3 +26,10 @@
 """
 
 ip = "192.168.3.1"
+ipaddr = ip.split('.')
+template = '''
+{:<8}   {:<8}   {:<8}   {:<8}
+{:08b}   {:08b}   {:08b}   {:08b}
+'''
+print(template.format(ipaddr[0], ipaddr[1], ipaddr[2], ipaddr[3],
+                      int(ipaddr[0]), int(ipaddr[1]), int(ipaddr[2]), int(ipaddr[3])))
