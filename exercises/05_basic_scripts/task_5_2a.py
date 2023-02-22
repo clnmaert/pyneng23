@@ -54,7 +54,7 @@ userip = enterip.split('/')[0].split('.')
 usermask = int(enterip.split('/')[-1])
 binmask = ('1' * usermask + '0' * (32 - usermask))
 binuserip_template = '{:08b}{:08b}{:08b}{:08b}'
-binuserip = binuserip_template.format(int(userip[0]),int(userip[1]),int(userip[2]),int(userip[3]))
+binuserip = binuserip_template.format(int(userip[0]), int(userip[1]), int(userip[2]), int(userip[3]))
 binuserip = binuserip[0:usermask] + '0' * (32 - usermask)
 template = '''
 Network:
