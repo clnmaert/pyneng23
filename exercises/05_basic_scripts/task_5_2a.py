@@ -49,3 +49,29 @@ bin_ip = "00001010000000010000000111000011"
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+enterip = input('Введити ваш айпи в формате 10.1.1.0/24: \n')
+userip = enterip.split('/')[0].split('.')
+usermask = int(enterip.split('/')[-1])
+binmask = ('1' * usermask + '0' * (32 - usermask))
+binuserip_template = '{:08b}{:08b}{:08b}{:08b}'
+binuserip = binuserip_template.format(int(userip[0]),int(userip[1]),int(userip[2]),int(userip[3]))
+binuserip = binuserip[0:usermask] + '0' * (32 - usermask)
+template = '''
+Network:
+{:<8}  {:<8}  {:<8}  {:<8}
+{:<8}  {:<8}  {:<8}  {:<8}  
+
+Mask:
+/{:<8}
+{:<8}  {:<8}  {:<8}  {:<8}
+{:<8}  {:<8}  {:<8}  {:<8}
+'''
+print(template.format(
+    int(binuserip[0:8], 2), int(binuserip[8:16], 2), int(binuserip[16:24], 2), int(binuserip[24:], 2),
+    binuserip[0:8], binuserip[8:16], binuserip[16:24], binuserip[24:],
+    usermask,
+    int(binmask[0:8], 2), int(binmask[8:16], 2), int(binmask[16:24], 2), int(binmask[24:], 2),
+    binmask[0:8], binmask[8:16], binmask[16:24], binmask[24:]
+))
+print('8========================================о   (_*_)')
+print('ну и пот блин :)')
