@@ -86,7 +86,6 @@ for i in trunk.keys():
     for command in trunk_template:
         if command.endswith('allowed vlan'):
             vlanlist = ','.join(trunk[i][1:])
-            print(vlanlist)
-            print(f'{command} {i[0]} {vlanlist}')
+            print(f'{command} {trunk[i][0]} {vlanlist}')
         else:
             print(f'{command}')
