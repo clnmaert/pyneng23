@@ -12,3 +12,27 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+while True:
+    userip = input("Введите ваш айпи: \n")
+    userip_list = userip_list.split('.')
+    valid_ip = len(userip_list) == 4
+
+    for i in userip_list:
+        valid_ip = int(i) in range(256) and i.isdigit() and valid_ip
+
+    if valid_ip:
+        break
+print('Неправильный IP-адрес')
+
+if 1 < int(userip_list[0]) < 223:
+    print('unicast')
+elif 1 < int(userip_list[0]) < 239:
+    print('multicast')
+elif userip == '255.255.255.255':
+    print('local broadcast')
+elif userip == '0.0.0.0':
+    print('unassigned')
+else:
+    print('unused')
+#Да ну впизду блядь. Ну серьезно. Как мем про нарисуйте сову. Она тут такие конструкции использует, что вобще
+#хер допрёшь без опыта их написать. Цикл фор вобще не понимаю зачем так написан и как работает
