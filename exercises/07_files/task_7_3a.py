@@ -40,3 +40,13 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+spis = []
+with open('CAM_table.txt') as f:
+    for line in f:
+        data = line.split()
+        if len(data) > 1 and data[0].isdigit():
+            line_list = [int(data[0]), data[1], data[3]]
+            spis.append(line_list)
+    for i in sorted(spis):
+        print('{:<9}{:<20}{}'.format(i[0], i[1], i[2]))
+
