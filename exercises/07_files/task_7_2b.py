@@ -17,3 +17,9 @@
 """
 
 ignore = ["duplex", "alias", "configuration"]
+with open('C:/Users/maert/PycharmProjects/pyneng23/exercises/07_files/config_sw1.txt') as f, open ('result.txt', 'w') as w:
+    for line in f:
+        words = line.split()
+        words_intersect = set(words) & set(ignore)
+        if not line.startswith('!') and not words_intersect:
+            w.write(line.rstrip() + '\n')
