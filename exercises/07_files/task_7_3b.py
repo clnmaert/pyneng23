@@ -17,3 +17,16 @@ Enter VLAN number: 10
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+spis = []
+with open('CAM_table.txt') as f:
+    for line in f:
+        data = line.split()
+        if len(data) > 1 and data[0].isdigit():
+            line_list = [int(data[0]), data[1], data[3]]
+            spis.append(line_list)
+    user_vlan = input('Введите номер влана: \n')
+    for i in sorted(spis):
+        if int(user_vlan) == i[0]:
+            print('{:<9}{:<20}{}'.format(i[0], i[1], i[2]))
+    else:
+        print('А вот хуй. Нету такого влана блядь. Я всё облазил')
