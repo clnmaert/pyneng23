@@ -20,3 +20,8 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+with open('CAM_table.txt') as f:
+    for line in f:
+        data = line.split()
+        if len(data) > 1 and data[0].isdigit():
+            print('{:<9}{:<20}{}'.format(data[0], data[1], data[3]))
