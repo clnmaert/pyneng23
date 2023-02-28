@@ -39,3 +39,7 @@ interface Ethernet0/3
 ...
 
 """
+with open('C:/Users/maert/PycharmProjects/pyneng23/exercises/07_files/config_sw1.txt') as f:
+    for line in f:
+        if not line.startswith('!'):
+            print(line.rstrip())
