@@ -16,4 +16,25 @@
 
 """
 
-ignore = ["duplex", "alias", "configuration"]
+ignore = ["alias", "duplex", "configuration"]
+with open('C:/Users/maert/PycharmProjects/pyneng23/exercises/07_files/config_sw1.txt') as f:
+    for line in f:
+        words = line.split()
+        words_intersect = set(words) & set(ignore)
+        if not line.startswith('!') and not words_intersect:
+            print(line.rstrip())
+
+#хуйня 3
+        '''for word in ignore:
+            if line.startswith('!') or (word in line):
+                break
+            else:
+                print(line.rstrip())'''
+
+#хуйня 2
+'''        if not line.startswith('!'):
+            for word in ignore:
+                if word in line:
+                    break
+                else:
+                    print(line.rstrip())'''
