@@ -61,3 +61,4 @@ def generate_trunk_config(intf_vlan_mapping, trunk_mode_template):
                 result_set[intf].append(f'{command}')
     return result_set
 print(generate_trunk_config(trunk_config, trunk_mode_template))
+print('Ну и кто тут отец')
