@@ -20,6 +20,11 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+with open('C:/Users/maert/PycharmProjects/pyneng23/exercises/07_files/CAM_table.txt') as f:
+    for line in f:
+        data = line.split()
+        if data[0].isdigit():
+            print(line.rstrip())
 with open('CAM_table.txt') as f:
     for line in f:
         data = line.split()
