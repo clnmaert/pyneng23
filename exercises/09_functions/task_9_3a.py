@@ -48,3 +48,4 @@ def get_int_vlan_map(config_filename):
     result_tuple = (access_dict, trunk_dict)
     return result_tuple
 print(get_int_vlan_map('config_sw2.txt'))
+print('А вот моё решение мне больше нравится :)')
