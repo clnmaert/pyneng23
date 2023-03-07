@@ -64,3 +64,24 @@ def ignore_command(command, ignore):
         if word in command:
             ignore_status = True
     return ignore_status
+
+def convert_config_to_dict(config_filename):
+    result_set = {}
+    subcommand_list = []
+    with open(config_filename) as cfg:
+        for line in cfg:
+            if not line.startswith('!') and not ignore_command(line, ignore):
+                if not line.startswith(' '):
+                    command = line.rstrip()
+                    subcommand_list = []
+                elif line.startswith(' '):
+                    subcommand_list.append(line.strip())
+                    #print(subcommand_list)
+            result_set.setdefault(command, subcommand_list)
+    return result_set
+
+
+#print(convert_config_to_dict('config_sw1.txt'))
+for key, value in convert_config_to_dict('config_sw1.txt').items():
+    print(f'{key}: {value}')
+print('Отец ваще пиздец. Разогнался внатуре')
