@@ -70,6 +70,7 @@ def convert_config_to_dict(config_filename):
     subcommand_list = []
     with open(config_filename) as cfg:
         for line in cfg:
+            line = line.rstrip()
             if not line.startswith('!') and not ignore_command(line, ignore):
                 if not line.startswith(' '):
                     command = line.rstrip()
