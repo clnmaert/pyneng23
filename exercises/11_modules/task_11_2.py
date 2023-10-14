@@ -50,3 +50,5 @@ def create_network_map(filenames):
 if __name__ == "__main__":
     topology = create_network_map(infiles)
     pprint(topology)
+
+#всё позабывал нафиг. Просто переписал сто раз сверившись с готовым ответом
