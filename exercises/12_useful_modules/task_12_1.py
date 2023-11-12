@@ -37,4 +37,5 @@ if __name__ == "__main__":
     print(ping_ip_addresses(['192.168.74.1', '127.0.0.1', 'ya.ru', '192.168.12.1' '192.168.11.1']))
 
 #na udivlenie napisal kod sam. Podsmotrel tolko kak oformin if name main, i eshe stderr=subprocees....
-#no kod rabotaet stranno. inacessible ips on zameshivaet v odnu stroku za kakim to herom
+#no kod rabotaet stranno. inacessible ips on zameshivaet v odnu stroku za kakim to herom. No nado skazat 4to i eyo kod
+#tak je mudit
