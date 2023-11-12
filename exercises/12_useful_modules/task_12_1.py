@@ -17,3 +17,24 @@ IP-адрес считается доступным, если выполнени
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+import subprocess
+
+def ping_ip_addresses(list_of_ips):
+    acessible = []
+    inacessible = []
+    for ip in list_of_ips:
+        ping_check = subprocess.run(['ping', '-c', '3', ip], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        if ping_check.returncode == 0:
+            acessible.append(ip)
+        else:
+            #print(ip)
+            inacessible.append(ip)
+            #print(inacessible)
+    #print(inacessible)
+    return(tuple([acessible, inacessible]))
+
+if __name__ == "__main__":
+    print(ping_ip_addresses(['192.168.74.1', '127.0.0.1', 'ya.ru', '192.168.12.1' '192.168.11.1']))
+
+#na udivlenie napisal kod sam. Podsmotrel tolko kak oformin if name main, i eshe stderr=subprocees....
+#no kod rabotaet stranno. inacessible ips on zameshivaet v odnu stroku za kakim to herom
